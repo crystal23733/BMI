@@ -9,7 +9,33 @@ int main(void)
 	scanf("%lf%lf", &weight, &height);
 
 	height = height / 100.0;
-	BMI = weight / (height * 2);
-	printf("입력하신 몸무게는 %lf이고 입력하신 키는 %lf입니다. BMI수치는 %lf입니다.", weight, height, BMI);
+	BMI = weight / (height * height);
+	
+	if(BMI < 18.5)
+	{
+		printf("%.2lf로 저체중입니다.",BMI);
+	}
+	else if(18.5 <= BMI < 22.9)
+	{
+		printf("%.2lf로 정상입니다.",BMI);
+	}
+	else if(23 <= BMI < 24.9)
+	{
+		printf("%.2lf로 비만 전단계입니다.",BMI);
+	}
+	else if(25 <= BMI < 29.9)
+	{
+		printf("%.2lf로 비만 1단계입니다.",BMI);
+	}
+	else if(30 <= BMI < 34.9)
+	{
+		printf("%.2lf로 비만 2단계입니다.",BMI);
+	}
+	else if(35 <= BMI)
+	{
+		printf("%.2lf로 초고도비만입니다.",BMI);
+	}
+
+	return 0;
 }
 
